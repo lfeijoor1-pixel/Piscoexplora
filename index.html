@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PsicoExplora | Centro Psicológico Infantil y Familiar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8fbff;
+    color:#333;
+}
+
+header{
+    background:white;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#3b82f6;
+}
+
+.logo span{
+    color:#14b8a6;
+}
+
+.nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+.hero{
+    margin-top:80px;
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1500&q=80');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:#14b8a6;
+    color:white;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+}
+
+section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:40px;
+    color:#3b82f6;
+}
+
+.section-title p{
+    color:#666;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-text h3{
+    margin-bottom:20px;
+    color:#14b8a6;
+    font-size:28px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#3b82f6;
+    margin-bottom:15px;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.step{
+    background:white;
+    text-align:center;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.number{
+    width:60px;
+    height:60px;
+    background:#14b8a6;
+    color:white;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.benefits{
+    background:#eaf8ff;
+}
+
+.benefits ul{
+    max-width:800px;
+    margin:auto;
+    list-style:none;
+}
+
+.benefits li{
+    background:white;
+    margin-bottom:15px;
+    padding:18px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.testimonial{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.contact{
+    background:#3b82f6;
+    color:white;
+    text-align:center;
+}
+
+.contact h2{
+    margin-bottom:20px;
+}
+
+.contact p{
+    margin-bottom:10px;
+}
+
+footer{
+    background:#1f2937;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25D366;
+    color:white;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+@media(max-width:768px){
+
+.nav{
+    flex-direction:column;
+}
+
+.nav ul{
+    margin-top:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.about{
+    grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">Psico<span>Explora</span></div>
+
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#proceso">Proceso</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+
+</div>
+</header>
+
+<section class="hero" id="inicio">
+<div class="container">
+<div class="hero-content">
+
+<h1>Explorando emociones, descubriendo fortalezas</h1>
+
+<p>
+Brindamos atención psicológica infantil, adolescente y familiar,
+acompañando cada etapa del desarrollo emocional con profesionalismo,
+empatía y compromiso.
+</p>
+
+<a href="#contacto" class="btn">Agendar Consulta</a>
+
+</div>
+</div>
+</section>
+
+<section id="nosotros">
+<div class="container">
+
+<div class="section-title">
+<h2>¿Quiénes Somos?</h2>
+<p>Centro especializado en salud mental infantil y familiar.</p>
+</div>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&w=1000&q=80">
+
+<div class="about-text">
+
+<h3>Bienvenidos a PsicoExplora</h3>
+
+<p>
+Somos un centro psicológico comprometido con el bienestar emocional
+de niños, adolescentes y sus familias.
+</p>
+
+<br>
+
+<p>
+Trabajamos desde un enfoque integral, fortaleciendo habilidades
+emocionales, sociales y cognitivas mediante estrategias adaptadas
+a las necesidades de cada persona.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="servicios">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Nuestros Servicios</h2>
+<p>Atención especializada para cada necesidad.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Evaluación Psicológica</h3>
+<p>Valoración integral del área emocional, conductual y cognitiva.</p>
+</div>
+
+<div class="card">
+<h3>Terapia Infantil</h3>
+<p>Intervención mediante juego terapéutico y técnicas adaptadas.</p>
+</div>
+
+<div class="card">
+<h3>Terapia para Adolescentes</h3>
+<p>Apoyo en autoestima, ansiedad, identidad y relaciones sociales.</p>
+</div>
+
+<div class="card">
+<h3>Orientación para Padres</h3>
+<p>Herramientas prácticas para fortalecer la crianza positiva.</p>
+</div>
+
+<div class="card">
+<h3>Talleres Psicoeducativos</h3>
+<p>Programas de habilidades sociales, emociones y convivencia.</p>
+</div>
+
+<div class="card">
+<h3>Atención Virtual</h3>
+<p>Sesiones psicológicas desde cualquier lugar con total seguridad.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="proceso">
+
+<div class="container">
+
+<div class="section-title">
+<h2>¿Cómo Trabajamos?</h2>
+<p>Proceso terapéutico personalizado.</p>
+</div>
+
+<div class="process">
+
+<div class="step">
+<div class="number">1</div>
+<h3>Entrevista Inicial</h3>
+<p>Conocemos la situación y necesidades del paciente.</p>
+</div>
+
+<div class="step">
+<div class="number">2</div>
+<h3>Evaluación</h3>
+<p>Identificamos fortalezas y áreas de intervención.</p>
+</div>
+
+<div class="step">
+<div class="number">3</div>
+<h3>Plan Terapéutico</h3>
+<p>Diseñamos objetivos específicos y personalizados.</p>
+</div>
+
+<div class="step">
+<div class="number">4</div>
+<h3>Seguimiento</h3>
+<p>Monitoreamos avances junto a la familia.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="benefits">
+
+<div class="container">
+
+<div class="section-title">
+<h2>¿Por Qué Elegirnos?</h2>
+</div>
+
+<ul>
+<li>✔ Atención personalizada.</li>
+<li>✔ Profesionalismo y ética.</li>
+<li>✔ Ambiente cálido y seguro.</li>
+<li>✔ Comunicación constante con las familias.</li>
+<li>✔ Intervenciones basadas en evidencia científica.</li>
+<li>✔ Atención presencial y virtual.</li>
+</ul>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Testimonios</h2>
+</div>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>
+"Mi hijo logró expresar mejor sus emociones y mejoró notablemente
+su comportamiento."
+</p>
+</div>
+
+<div class="testimonial">
+<p>
+"Nos sentimos acompañados durante todo el proceso y aprendimos
+herramientas útiles para la crianza."
+</p>
+</div>
+
+<div class="testimonial">
+<p>
+"Excelente atención, profesionalismo y mucha calidad humana."
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contacto">
+
+<div class="container">
+
+<h2>Agenda tu Consulta</h2>
+
+<p>📍 Piura, Perú</p>
+<p>📱 WhatsApp: +51 961 601 400</p>
+<p>📧 contacto@psicoexplora.pe</p>
+<p>🕒 Atención presencial y virtual</p>
+
+<br>
+
+<a href="https://wa.me/51961601400" class="btn">
+Reservar Cita
+</a>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 PsicoExplora | Centro Psicológico Infantil y Familiar</p>
+</footer>
+
+<a href="https://wa.me/51961601400" class="whatsapp" target="_blank">
+💬
+</a>
+
+</body>
+</html>
